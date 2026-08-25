@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "api/engine.ts": {
+      "maxDuration": 300,
+      "regions": ["hnd1"]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/engine/:path*", "destination": "/api/engine?enginePath=:path" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/auth", "destination": "/index.html" },
+    { "source": "/admin/:path*", "destination": "/index.html" },
+    { "source": "/projects/:path*", "destination": "/index.html" },
+    { "source": "/studio/:path*", "destination": "/index.html" },
+    { "source": "/tool/:path*", "destination": "/index.html" },
+    { "source": "/profile", "destination": "/index.html" },
+    { "source": "/pricing", "destination": "/index.html" },
+    { "source": "/library", "destination": "/index.html" }
+  ]
+}

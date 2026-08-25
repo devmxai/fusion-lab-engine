@@ -1,0 +1,14 @@
+# Local state and verification output are never deployment inputs.
+.git
+.github
+.local
+.vercel
+.build-verify*
+test-results
+playwright-report
+node_modules
+dist
+*.log
+.env
+.env.local
+

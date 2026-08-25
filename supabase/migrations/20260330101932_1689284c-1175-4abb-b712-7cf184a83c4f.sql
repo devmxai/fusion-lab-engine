@@ -1,0 +1,1 @@
+ALTER TABLE public.homepage_banners ADD COLUMN linked_studio text DEFAULT NULL;

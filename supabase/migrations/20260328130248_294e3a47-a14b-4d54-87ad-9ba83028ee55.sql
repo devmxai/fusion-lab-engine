@@ -1,0 +1,1 @@
+UPDATE pricing_rules SET status = 'active' WHERE model IN ('kling/ai-avatar-standard', 'kling/ai-avatar-pro') AND status = 'pending_review';

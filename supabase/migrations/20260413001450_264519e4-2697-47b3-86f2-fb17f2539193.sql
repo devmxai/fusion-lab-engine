@@ -1,0 +1,1 @@
+UPDATE public.plan_entitlements SET max_video_duration_seconds = 15 WHERE plan_type IN ('free', 'starter', 'plus');

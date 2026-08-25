@@ -1,0 +1,56 @@
+import type { PublishedOffer } from "./published-offers-client";
+
+/** A server-shaped, verified fixture used only by the non-billable Phase 3 prototype. */
+export const standardPrototypeImageOffer: PublishedOffer = {
+  contractVersion: 2,
+  offerId: "prototype.gpt-image-2",
+  displayName: "GPT Image 2",
+  modelFamilyId: "openai.gpt-image-2",
+  providerId: "kie",
+  providerModelId: "gpt-image-2",
+  modalities: ["image"],
+  identity: { familyId: "openai.gpt-image-2", officialModelId: "gpt-image-2", providerId: "kie" },
+  capability: {
+    schemaVersion: 2,
+    id: "capability.prototype.image.v2",
+    version: 1,
+    mediaType: "image",
+    inputModes: ["text", "image"],
+    semanticSlots: ["SOURCE", "REFERENCE"],
+    maxReferences: 4,
+    resolutions: ["1K", "2K", "4K"],
+    durationSeconds: null,
+    characterCount: null,
+    supportsAudio: false,
+    outputHasAudio: false,
+    controlSchema: {
+      version: "prototype.image.controls.v2",
+      recipes: [{
+        recipeId: "image.create",
+        prompt: { required: true, maxLength: 1200, visible: true },
+        bindings: { min: 0, max: 4, roles: ["SOURCE", "REFERENCE"], slots: [] },
+        controls: [
+          { id: "resolution", kind: "enum", defaultValue: "1K", values: ["1K", "2K", "4K"], ui: { labelKey: "control.resolution", group: "BASIC", order: 1 } },
+          { id: "aspectRatio", kind: "enum", defaultValue: "1:1", values: ["1:1", "4:5", "16:9", "9:16"], ui: { labelKey: "control.aspectRatio", group: "BASIC", order: 2 } },
+          { id: "style", kind: "enum", defaultValue: "Natural", values: ["Natural", "Cinematic", "Illustrated"], ui: { labelKey: "control.style", group: "ADVANCED", order: 3 } },
+          { id: "detail", kind: "enum", defaultValue: "Standard", values: ["Standard", "High"], ui: { labelKey: "control.detail", group: "ADVANCED", order: 4 } },
+          { id: "seed", kind: "number", defaultValue: 42, min: 0, max: 999999, step: 1, ui: { labelKey: "control.seed", group: "ADVANCED", order: 5 } },
+        ],
+      }],
+    },
+  },
+  customerPriceVersionId: "prototype.customer-price.v1",
+  commercialRecipeVersionId: "prototype.commercial-recipe.v1",
+  releaseBundleId: "prototype.release-bundle.v1",
+  releaseBundleVersion: 1,
+  evidence: {
+    level: "SERVER_VERIFIED",
+    capabilityVersionId: "capability.prototype.image.v2",
+    capabilityVersion: 1,
+    controlSchemaVersion: "prototype.image.controls.v2",
+    catalogSnapshotId: "prototype.snapshot.v1",
+    catalogSnapshotVersion: 1,
+    commercialRegistryEvidenceSha256: "a".repeat(64),
+    contractSha256: "b".repeat(64),
+  },
+};

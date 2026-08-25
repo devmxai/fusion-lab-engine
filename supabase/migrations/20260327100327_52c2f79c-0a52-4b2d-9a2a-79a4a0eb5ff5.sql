@@ -1,0 +1,1 @@
+DELETE FROM model_cards WHERE image_url IS NOT NULL;

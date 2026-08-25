@@ -1,0 +1,1 @@
+ALTER TABLE public.subscription_requests ADD CONSTRAINT subscription_requests_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.profiles(id) ON DELETE CASCADE;

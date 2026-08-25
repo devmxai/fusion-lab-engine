@@ -1,0 +1,16 @@
+project_id = "soweiomymeqfjpakohzc"
+
+[functions.kie-ai]
+verify_jwt = false
+
+[functions.start-generation]
+verify_jwt = false
+
+[functions.complete-generation]
+verify_jwt = false
+
+[functions.gemini-tts]
+verify_jwt = false
+
+[functions.system-jobs]
+verify_jwt = false

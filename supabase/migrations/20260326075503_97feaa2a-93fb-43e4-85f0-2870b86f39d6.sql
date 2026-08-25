@@ -1,0 +1,1 @@
+ALTER TABLE public.model_cards ADD COLUMN IF NOT EXISTS display_section text DEFAULT 'images';

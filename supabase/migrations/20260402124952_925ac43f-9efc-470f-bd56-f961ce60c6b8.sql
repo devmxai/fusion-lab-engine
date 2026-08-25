@@ -1,0 +1,1 @@
+UPDATE plan_entitlements SET daily_generation_limit = NULL WHERE plan_type IN ('starter', 'plus', 'pro');
